@@ -27,7 +27,12 @@ public class ManagerUiController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        customerList = new CustomerList(generateTestData());
+        try {
+          customerList = GsonManager.getRemoteCustomers();
+        } catch (Exception e) {
+
+        }
+        //customerList = new CustomerList(generateTestData());
 
         for (Customer customer : customerList.getCustomers()) {
             observableCustomerList.add(customer.getName());
