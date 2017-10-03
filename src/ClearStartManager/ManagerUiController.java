@@ -39,7 +39,8 @@ public class ManagerUiController implements Initializable {
 
         refreshCustomerList();
 
-        resetButton.setOnMouseClicked(event -> refreshCustomerList());
+        //resetButton.setOnMouseClicked(event -> refreshCustomerList());
+        resetButton.setDisable(true);
         saveButton.setDisable(true);
         toggleAgentButton.setDisable(true);
         toggleCoachButton.setDisable(true);
