@@ -1,5 +1,6 @@
 package ClearStartManager;
 
+import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,11 +14,19 @@ import java.util.*;
 public class ManagerUiController implements Initializable {
 
     @FXML
-    private ListView<String> customerListBox;
+    private JFXListView<String> customerListBox;
     @FXML
-    private ListView<String> settingKeyListBox;
+    private JFXListView<String> settingKeyListBox;
     @FXML
-    private ListView<String> settingValueListBox;
+    private JFXListView<String> settingValueListBox;
+    @FXML
+    private JFXButton resetButton;
+    @FXML
+    private JFXButton saveButton;
+    @FXML
+    private JFXButton toggleAgentButton;
+    @FXML
+    private JFXButton toggleCoachButton;
 
 
     private ObservableList<String> observableCustomerList = FXCollections.observableArrayList();
@@ -27,55 +36,43 @@ public class ManagerUiController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        refreshCustomerList();
+
+        resetButton.setOnMouseClicked(event -> refreshCustomerList());
+        saveButton.setDisable(true);
+        toggleAgentButton.setDisable(true);
+        toggleCoachButton.setDisable(true);
+
+        settingKeyListBox.setEditable(true);
+        settingKeyListBox.setCellFactory(TextFieldListCell.forListView());
+        settingKeyListBox.setOnEditCommit(this::settingKeyEdited);
+
+        settingValueListBox.setEditable(true);
+
+        settingValueListBox.setCellFactory(TextFieldListCell.forListView());
+        settingValueListBox.setOnEditCommit(this::settingValueEdited);
+
+        customerListBox.setOnMouseClicked(event -> customerListClicked());
+    }
+
+    private void refreshCustomerList() {
+        observableCustomerList.clear();
         try {
-          customerList = GsonManager.getRemoteCustomers();
+            //customerList = GsonManager.refreshCustomers();
+            customerList = GsonManagerTest.createCustomerListWithTestData();
         } catch (Exception e) {
-
+            //TODO: Proper exception handling
+            e.printStackTrace();
+            System.exit(0);
         }
-        //customerList = new CustomerList(generateTestData());
-
         for (Customer customer : customerList.getCustomers()) {
             observableCustomerList.add(customer.getName());
         }
 
         customerListBox.setItems(observableCustomerList);
 
-        settingKeyListBox.setEditable(true);
-        settingKeyListBox.setCellFactory(TextFieldListCell.forListView());
-        settingKeyListBox.setOnEditCommit(this::settingKeyEdited);
-        settingValueListBox.setEditable(true);
-        settingValueListBox.setCellFactory(TextFieldListCell.forListView());
-        settingValueListBox.setOnEditCommit(this::settingValueEdited);
 
-
-        customerListBox.setOnMouseClicked(event -> customerListClicked());
-    }
-
-    private List<Customer> generateTestData() {
-        List<Setting> cust1Settings = Arrays.asList(
-                new Setting("ip", "192.168.1.2"),
-                new Setting("phone", "4088"),
-                new Setting("user", "user1")
-        );
-        Customer cust1 = new Customer(
-                "Customer1",
-                cust1Settings
-        );
-
-        List<Setting> cust2Settings = Arrays.asList(
-                new Setting("ip", "10.0.0.1"),
-                new Setting("phone", "4033")
-        );
-        Customer cust2 = new Customer(
-                "Customer2",
-                cust2Settings
-        );
-        List<Customer> customers = new ArrayList<Customer>();
-
-        customers.add(cust1);
-        customers.add(cust2);
-
-        return customers;
     }
 
     private void customerListClicked() {
@@ -103,10 +100,10 @@ public class ManagerUiController implements Initializable {
     }
 
     private Customer getSelectedCustomer() throws NoSuchElementException {
-        String selectedName = customerListBox.getSelectionModel().getSelectedItems().get(0);
-        if (selectedName == null) throw new NoSuchElementException();
+        int selectedIndex = customerListBox.getSelectionModel().getSelectedIndex();
+        if (selectedIndex == -1) throw new NoSuchElementException();
 
-        return customerList.getCustomerByName(selectedName);
+        return customerList.getCustomerByIndex(selectedIndex);
     }
 
     private void settingKeyEdited(ListView.EditEvent event) {

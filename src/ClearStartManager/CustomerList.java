@@ -18,11 +18,10 @@ class CustomerList {
         this.customers = customers;
     }
 
-    Customer getCustomerByName(String name) throws NoSuchElementException {
-        for (Customer customer : this.customers) {
-            if (name.equals(customer.getName())) {
-                return customer;
-            }
+    Customer getCustomerByIndex(int index) throws NoSuchElementException {
+        Customer customer = this.customers.get(index);
+        if (customer != null) {
+            return customer;
         }
         throw new NoSuchElementException();
     }
