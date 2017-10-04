@@ -37,9 +37,10 @@ public class ManagerUiController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        refreshCustomerList();
+        resetCustomerList();
+        refreshGui();
 
-        //resetButton.setOnMouseClicked(event -> refreshCustomerList());
+        resetButton.setOnMouseClicked(event -> resetButtonClicked());
         resetButton.setDisable(true);
         saveButton.setDisable(true);
         toggleAgentButton.setDisable(true);
@@ -57,8 +58,8 @@ public class ManagerUiController implements Initializable {
         customerListBox.setOnMouseClicked(event -> customerListClicked());
     }
 
-    private void refreshCustomerList() {
-        observableCustomerList.clear();
+    private void resetCustomerList() {
+
         try {
             //customerList = GsonManager.refreshCustomers();
             customerList = GsonManagerTest.createCustomerListWithTestData();
@@ -67,12 +68,24 @@ public class ManagerUiController implements Initializable {
             e.printStackTrace();
             System.exit(0);
         }
+    }
+
+    private void refreshGui() {
+        observableCustomerList.clear();
         for (Customer customer : customerList.getCustomers()) {
             observableCustomerList.add(customer.getName());
         }
 
         customerListBox.setItems(observableCustomerList);
 
+        try {
+            Customer selectedCustomer = getSelectedCustomer();
+            showCustomer(selectedCustomer);
+        } catch (IndexOutOfBoundsException e) {
+            Customer selectedCustomer = getTopmostCustomer();
+            customerListBox.getSelectionModel().selectFirst();
+            showCustomer(selectedCustomer);
+        }
 
     }
 
@@ -80,34 +93,46 @@ public class ManagerUiController implements Initializable {
         Customer clickedCustomer;
         try {
             clickedCustomer = getSelectedCustomer();
-        } catch (NoSuchElementException e) {
+        } catch (IndexOutOfBoundsException e) {
             return;
         }
 
         showCustomer(clickedCustomer);
     }
 
+    private void resetButtonClicked() {
+        resetButton.setDisable(true);
+        resetCustomerList();
+        refreshGui();
+    }
+
 
     private void showCustomer(Customer customer) {
         settingKeyListBox.getItems().clear();
         settingValueListBox.getItems().clear();
-
         for (Setting setting : customer.getSettings()) {
             observableSettingKeyList.add(setting.getKey());
             observableSettingValueList.add(setting.getValue());
         }
         settingKeyListBox.setItems(observableSettingKeyList);
         settingValueListBox.setItems(observableSettingValueList);
+
     }
 
-    private Customer getSelectedCustomer() throws NoSuchElementException {
+    private Customer getSelectedCustomer() throws IndexOutOfBoundsException {
         int selectedIndex = customerListBox.getSelectionModel().getSelectedIndex();
-        if (selectedIndex == -1) throw new NoSuchElementException();
+        if (selectedIndex == -1) throw new IndexOutOfBoundsException();
 
         return customerList.getCustomerByIndex(selectedIndex);
     }
 
+    private Customer getTopmostCustomer() {
+        return customerList.getCustomerByIndex(0);
+    }
+
+
     private void settingKeyEdited(ListView.EditEvent event) {
+        resetButton.setDisable(false);
         Customer selectedCustomer = getSelectedCustomer();
         Integer settingKeyIndex = event.getIndex();
         String newValue = event.getNewValue().toString();
@@ -117,6 +142,7 @@ public class ManagerUiController implements Initializable {
     }
 
     private void settingValueEdited(ListView.EditEvent event) {
+        resetButton.setDisable(false);
         Customer selectedCustomer = getSelectedCustomer();
         Integer settingValueIndex = event.getIndex();
         String newValue = event.getNewValue().toString();

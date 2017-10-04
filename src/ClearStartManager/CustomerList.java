@@ -18,12 +18,12 @@ class CustomerList {
         this.customers = customers;
     }
 
-    Customer getCustomerByIndex(int index) throws NoSuchElementException {
+    Customer getCustomerByIndex(int index) throws IndexOutOfBoundsException {
         Customer customer = this.customers.get(index);
         if (customer != null) {
             return customer;
         }
-        throw new NoSuchElementException();
+        throw new IndexOutOfBoundsException();
     }
 
 }
