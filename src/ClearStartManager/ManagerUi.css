@@ -3,9 +3,11 @@
     -fx-font-family: "Helvetica";
     -fx-font-size: 13pt;
 
-    -fx-accent: #95C9CD;
-    -fx-focus-color: transparent;
+    -fx-accent: #99BEEE;
 
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-text-box-border: transparent;
 }
 
 .list-view .list-cell {
@@ -19,5 +21,18 @@
 }
 
 #customerListBox .list-cell:selected {
-    -fx-background-color: #95C9CD;
+    -fx-background-color: #99BEEE;
+}
+
+.jfx-rippler {
+    -jfx-rippler-fill: #82A8D8;
+}
+
+#addCustomerButton {
+    -fx-border-color:white;
+    -fx-border-width:1px;
+    -fx-background-radius: 100%;
+    -fx-text-fill: white;
+    -fx-background-color: #99BEEE;
+    -fx-font-size: 20px;
 }

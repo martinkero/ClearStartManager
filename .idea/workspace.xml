@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClearStartManager/ManagerUi.css" afterPath="$PROJECT_DIR$/src/ClearStartManager/ManagerUi.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClearStartManager/ManagerUi.fxml" afterPath="$PROJECT_DIR$/src/ClearStartManager/ManagerUi.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClearStartManager/ManagerUiController.java" afterPath="$PROJECT_DIR$/src/ClearStartManager/ManagerUiController.java" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -54,7 +60,6 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
@@ -63,8 +68,8 @@
       <file leaf-file-name="ClearStartManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ClearStartManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -73,149 +78,32 @@
       <file leaf-file-name="ManagerUiController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ManagerUiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
+            <state relative-caret-position="243">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4126#4127#0" expanded="true" />
-                <element signature="e#4183#4184#0" expanded="true" />
+                <element signature="e#2228#2229#0" expanded="true" />
+                <element signature="e#2261#2262#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ListView.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/ListView.java">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/ListView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="478" column="43" selection-start-line="478" selection-start-column="43" selection-end-line="478" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#63811#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#14070#14071#0" expanded="false" />
-                <element signature="e#14130#14131#0" expanded="false" />
-                <element signature="e#17162#17163#0" expanded="false" />
-                <element signature="e#17204#17205#0" expanded="false" />
-                <element signature="e#17697#17698#0" expanded="false" />
-                <element signature="e#17754#17755#0" expanded="false" />
-                <element signature="e#20046#20047#0" expanded="false" />
-                <element signature="e#20094#20095#0" expanded="false" />
-                <element signature="e#20135#20136#0" expanded="false" />
-                <element signature="e#20204#20205#0" expanded="false" />
-                <element signature="e#20338#20365#0" expanded="false" />
-                <element signature="e#20826#20827#0" expanded="false" />
-                <element signature="e#20877#20878#0" expanded="false" />
-                <element signature="e#21485#21486#0" expanded="false" />
-                <element signature="e#21522#21523#0" expanded="false" />
-                <element signature="e#21753#21754#0" expanded="false" />
-                <element signature="e#21800#21801#0" expanded="false" />
-                <element signature="e#21925#21926#0" expanded="false" />
-                <element signature="e#21992#21993#0" expanded="false" />
-                <element signature="e#22751#22752#0" expanded="false" />
-                <element signature="e#22799#22800#0" expanded="false" />
-                <element signature="e#22994#22995#0" expanded="false" />
-                <element signature="e#23079#23080#0" expanded="false" />
-                <element signature="e#23995#23996#0" expanded="false" />
-                <element signature="e#24055#24056#0" expanded="false" />
-                <element signature="e#24124#24125#0" expanded="false" />
-                <element signature="e#24184#24185#0" expanded="false" />
-                <element signature="e#24636#24637#0" expanded="false" />
-                <element signature="e#24684#24685#0" expanded="false" />
-                <element signature="e#26215#26216#0" expanded="false" />
-                <element signature="e#26265#26266#0" expanded="false" />
-                <element signature="e#28494#28495#0" expanded="false" />
-                <element signature="e#28554#28555#0" expanded="false" />
-                <element signature="e#28607#28608#0" expanded="false" />
-                <element signature="e#28669#28670#0" expanded="false" />
-                <element signature="e#28841#28842#0" expanded="false" />
-                <element signature="e#28886#28887#0" expanded="false" />
-                <element signature="e#28926#28927#0" expanded="false" />
-                <element signature="e#28990#28991#0" expanded="false" />
-                <element signature="e#29521#29522#0" expanded="false" />
-                <element signature="e#29574#29575#0" expanded="false" />
-                <element signature="e#29750#29751#0" expanded="false" />
-                <element signature="e#29819#29820#0" expanded="false" />
-                <element signature="e#30974#30975#0" expanded="false" />
-                <element signature="e#31022#31023#0" expanded="false" />
-                <element signature="e#31662#31663#0" expanded="false" />
-                <element signature="e#31754#31755#0" expanded="false" />
-                <element signature="e#31823#31824#0" expanded="false" />
-                <element signature="e#31883#31884#0" expanded="false" />
-                <element signature="e#31952#31953#0" expanded="false" />
-                <element signature="e#32012#32013#0" expanded="false" />
-                <element signature="e#32655#32656#0" expanded="false" />
-                <element signature="e#32704#32705#0" expanded="false" />
-                <element signature="e#33691#33692#0" expanded="false" />
-                <element signature="e#33784#33785#0" expanded="false" />
-                <element signature="e#33853#33854#0" expanded="false" />
-                <element signature="e#33913#33914#0" expanded="false" />
-                <element signature="e#33982#33983#0" expanded="false" />
-                <element signature="e#34043#34044#0" expanded="false" />
-                <element signature="e#34404#34405#0" expanded="false" />
-                <element signature="e#34453#34454#0" expanded="false" />
-                <element signature="e#35085#35086#0" expanded="false" />
-                <element signature="e#35178#35179#0" expanded="false" />
-                <element signature="e#35247#35248#0" expanded="false" />
-                <element signature="e#35307#35308#0" expanded="false" />
-                <element signature="e#35376#35377#0" expanded="false" />
-                <element signature="e#35437#35438#0" expanded="false" />
-                <element signature="e#36883#36884#0" expanded="false" />
-                <element signature="e#36938#36939#0" expanded="false" />
-                <element signature="e#37717#37718#0" expanded="false" />
-                <element signature="e#37764#37765#0" expanded="false" />
-                <element signature="e#38218#38219#0" expanded="false" />
-                <element signature="e#38314#38315#0" expanded="false" />
-                <element signature="e#38383#38384#0" expanded="false" />
-                <element signature="e#38443#38444#0" expanded="false" />
-                <element signature="e#38496#38497#0" expanded="false" />
-                <element signature="e#38555#38556#0" expanded="false" />
-                <element signature="e#38693#38694#0" expanded="false" />
-                <element signature="e#38741#38742#0" expanded="false" />
-                <element signature="e#40256#40257#0" expanded="false" />
-                <element signature="e#40344#40345#0" expanded="false" />
-                <element signature="e#41045#41046#0" expanded="false" />
-                <element signature="e#41115#41116#0" expanded="false" />
-                <element signature="e#41737#41774#0" expanded="false" />
-                <element signature="e#42431#42432#0" expanded="false" />
-                <element signature="e#42475#42476#0" expanded="false" />
-                <element signature="e#45886#45887#0" expanded="false" />
-                <element signature="e#45948#45949#0" expanded="false" />
-                <element signature="e#46065#46066#0" expanded="false" />
-                <element signature="e#46105#46106#0" expanded="false" />
-                <element signature="e#46235#46236#0" expanded="false" />
-                <element signature="e#46274#46275#0" expanded="false" />
-                <element signature="e#48371#50248#0" expanded="false" />
-                <element signature="e#50247#50248#0" expanded="false" />
-                <element signature="e#50752#50771#0" expanded="false" />
-                <element signature="e#54535#54553#0" expanded="false" />
-                <element signature="e#54804#54813#0" expanded="false" />
-                <element signature="e#54992#55001#0" expanded="false" />
-                <element signature="e#57648#57649#0" expanded="false" />
-                <element signature="e#57688#57689#0" expanded="false" />
-                <element signature="e#63177#63178#0" expanded="false" />
-                <element signature="e#63217#63218#0" expanded="false" />
-                <element signature="e#63475#63476#0" expanded="false" />
-                <element signature="e#63521#63522#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectionModel.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/SelectionModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+            <state relative-caret-position="415">
+              <caret line="883" column="16" lean-forward="false" selection-start-line="883" selection-start-column="16" selection-end-line="883" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoSuchElementException.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/util/NoSuchElementException.java">
+      <file leaf-file-name="GsonManagerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClearStartManager/GsonManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+            <state relative-caret-position="425">
+              <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -224,18 +112,18 @@
       <file leaf-file-name="ManagerUi.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ManagerUi.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GsonManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClearStartManager/GsonManager.java">
+      <file leaf-file-name="Setting.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClearStartManager/Setting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            <state relative-caret-position="102">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -244,8 +132,8 @@
       <file leaf-file-name="ManagerUi.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ManagerUi.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+            <state relative-caret-position="493">
+              <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -254,23 +142,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClearStartManager/Customer.java">
+      <file leaf-file-name="CustomerList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClearStartManager/CustomerList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+            <state relative-caret-position="187">
+              <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClearStartManager/CustomerList.java">
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClearStartManager/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state relative-caret-position="663">
+              <caret line="45" column="1" lean-forward="false" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -315,6 +205,9 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -344,14 +237,14 @@
         <option value="$PROJECT_DIR$/src/ClearStartManager/SettingList.java" />
         <option value="$PROJECT_DIR$/src/ClearStartManager/test.java" />
         <option value="$PROJECT_DIR$/src/ClearStartManager/Setting.java" />
-        <option value="$PROJECT_DIR$/src/ClearStartManager/ClearStartManager.java" />
         <option value="$PROJECT_DIR$/src/ClearStartManager/GsonManagerTest.java" />
-        <option value="$PROJECT_DIR$/src/ClearStartManager/ManagerUi.css" />
-        <option value="$PROJECT_DIR$/src/ClearStartManager/ManagerUi.fxml" />
         <option value="$PROJECT_DIR$/src/ClearStartManager/GsonManager.java" />
         <option value="$PROJECT_DIR$/src/ClearStartManager/CustomerList.java" />
-        <option value="$PROJECT_DIR$/src/ClearStartManager/ManagerUiController.java" />
         <option value="$PROJECT_DIR$/src/ClearStartManager/Customer.java" />
+        <option value="$PROJECT_DIR$/src/ClearStartManager/ClearStartManager.java" />
+        <option value="$PROJECT_DIR$/src/ClearStartManager/ManagerUi.fxml" />
+        <option value="$PROJECT_DIR$/src/ClearStartManager/ManagerUi.css" />
+        <option value="$PROJECT_DIR$/src/ClearStartManager/ManagerUiController.java" />
       </list>
     </option>
   </component>
@@ -370,20 +263,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="43" />
-    <option name="y" value="22" />
-    <option name="width" value="2517" />
-    <option name="height" value="1418" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <option name="x" value="-10" />
+    <option name="width" value="1362" />
+    <option name="height" value="1407" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
@@ -404,67 +286,29 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClearStartManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClearStartManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClearStartManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClearStartManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClearStartManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClearStartManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClearStartManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClearStartManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClearStartManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GsonManager.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="clearStartManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clearStartManager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="clearStartManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clearStartManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="clearStartManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clearStartManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ClearStartManager" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -480,7 +324,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/gson-2.8.2.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -511,7 +355,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration default="false" name="GsonManagerTest.getCustomerListFromJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GsonManagerTest.getCustomerListFromJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="ClearStartManager.*" />
@@ -535,7 +379,27 @@
       </option>
       <envs />
       <patterns />
-      <method />
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ClearStartManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="ClearStartManager.ClearStartManager" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="clearStartManager" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
@@ -544,7 +408,6 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -559,7 +422,60 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
     </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -727,27 +643,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -818,42 +713,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -882,6 +741,10 @@
       <listeners />
       <method />
     </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -904,28 +767,6 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Main" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ClearStartManager.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="ClearStartManager.ClearStartManager" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="clearStartManager" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.GsonManagerTest.getCustomerListFromJson" />
@@ -935,10 +776,6 @@
         <item index="0" class="java.lang.String" itemvalue="JUnit.GsonManagerTest.getCustomerListFromJson" />
       </list>
     </recent_temporary>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -1001,33 +838,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="22" width="2517" height="1418" extended-state="6" />
-    <editor active="true" />
+    <frame x="-10" y="0" width="1362" height="1407" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987398" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.017049666" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.017001545" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998455" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13309495" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24665676" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21497406" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1087,18 +923,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ManagerUiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4126#4127#0" expanded="true" />
-            <element signature="e#4183#4184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClearStartManager/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/ClearStartManager/Layout.fxml" />
     <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ResourceList.java" />
@@ -1124,75 +948,85 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/ArrayList.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/RuntimeException.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/NoSuchElementException.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/ListView.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/MultipleSelectionModel.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/AbstractList.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/AbstractList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="116" column="22" lean-forward="false" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/List.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/event/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="395" column="10" selection-start-line="395" selection-start-column="10" selection-end-line="395" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/event/EventHandler.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/util/Map.java" />
     <entry file="file://$PROJECT_DIR$/src/ClearStartManager/SettingList.java" />
-    <entry file="jar://$PROJECT_DIR$/libs/gson-2.8.2.jar!/com/google/gson/JsonElement.class">
+    <entry file="jar://$PROJECT_DIR$/libs/gson-2.8.2.jar!/com/google/gson/JsonElement.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/gson-2.8.2.jar!/com/google/gson/JsonObject.class" />
+    <entry file="jar://$PROJECT_DIR$/libs/gson-2.8.2.jar!/com/google/gson/Gson.class" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
+    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/test.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/cell/TextFieldListCell.java" />
+    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/GsonManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/gson-2.8.2.jar!/com/google/gson/JsonObject.class">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/util/NoSuchElementException.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/SelectionModel.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/ListView.java" />
+    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/CustomerList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        <state relative-caret-position="187">
+          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/gson-2.8.2.jar!/com/google/gson/Gson.class">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/event/EventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="536" column="0" selection-start-line="536" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="2591" column="0" selection-start-line="2591" selection-start-column="0" selection-end-line="2591" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ClearStartManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="45" column="1" lean-forward="false" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClearStartManager/Setting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/GsonManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ManagerUi.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        <state relative-caret-position="493">
+          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1200,197 +1034,38 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ClearStartManager.java">
+    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/GsonManagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/cell/TextFieldListCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ManagerUi.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/GsonManager.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/ListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="415">
+          <caret line="883" column="16" lean-forward="false" selection-start-line="883" selection-start-column="16" selection-end-line="883" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/util/NoSuchElementException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/SelectionModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/ListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="478" column="43" selection-start-line="478" selection-start-column="43" selection-end-line="478" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#63811#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#14070#14071#0" expanded="false" />
-            <element signature="e#14130#14131#0" expanded="false" />
-            <element signature="e#17162#17163#0" expanded="false" />
-            <element signature="e#17204#17205#0" expanded="false" />
-            <element signature="e#17697#17698#0" expanded="false" />
-            <element signature="e#17754#17755#0" expanded="false" />
-            <element signature="e#20046#20047#0" expanded="false" />
-            <element signature="e#20094#20095#0" expanded="false" />
-            <element signature="e#20135#20136#0" expanded="false" />
-            <element signature="e#20204#20205#0" expanded="false" />
-            <element signature="e#20338#20365#0" expanded="false" />
-            <element signature="e#20826#20827#0" expanded="false" />
-            <element signature="e#20877#20878#0" expanded="false" />
-            <element signature="e#21485#21486#0" expanded="false" />
-            <element signature="e#21522#21523#0" expanded="false" />
-            <element signature="e#21753#21754#0" expanded="false" />
-            <element signature="e#21800#21801#0" expanded="false" />
-            <element signature="e#21925#21926#0" expanded="false" />
-            <element signature="e#21992#21993#0" expanded="false" />
-            <element signature="e#22751#22752#0" expanded="false" />
-            <element signature="e#22799#22800#0" expanded="false" />
-            <element signature="e#22994#22995#0" expanded="false" />
-            <element signature="e#23079#23080#0" expanded="false" />
-            <element signature="e#23995#23996#0" expanded="false" />
-            <element signature="e#24055#24056#0" expanded="false" />
-            <element signature="e#24124#24125#0" expanded="false" />
-            <element signature="e#24184#24185#0" expanded="false" />
-            <element signature="e#24636#24637#0" expanded="false" />
-            <element signature="e#24684#24685#0" expanded="false" />
-            <element signature="e#26215#26216#0" expanded="false" />
-            <element signature="e#26265#26266#0" expanded="false" />
-            <element signature="e#28494#28495#0" expanded="false" />
-            <element signature="e#28554#28555#0" expanded="false" />
-            <element signature="e#28607#28608#0" expanded="false" />
-            <element signature="e#28669#28670#0" expanded="false" />
-            <element signature="e#28841#28842#0" expanded="false" />
-            <element signature="e#28886#28887#0" expanded="false" />
-            <element signature="e#28926#28927#0" expanded="false" />
-            <element signature="e#28990#28991#0" expanded="false" />
-            <element signature="e#29521#29522#0" expanded="false" />
-            <element signature="e#29574#29575#0" expanded="false" />
-            <element signature="e#29750#29751#0" expanded="false" />
-            <element signature="e#29819#29820#0" expanded="false" />
-            <element signature="e#30974#30975#0" expanded="false" />
-            <element signature="e#31022#31023#0" expanded="false" />
-            <element signature="e#31662#31663#0" expanded="false" />
-            <element signature="e#31754#31755#0" expanded="false" />
-            <element signature="e#31823#31824#0" expanded="false" />
-            <element signature="e#31883#31884#0" expanded="false" />
-            <element signature="e#31952#31953#0" expanded="false" />
-            <element signature="e#32012#32013#0" expanded="false" />
-            <element signature="e#32655#32656#0" expanded="false" />
-            <element signature="e#32704#32705#0" expanded="false" />
-            <element signature="e#33691#33692#0" expanded="false" />
-            <element signature="e#33784#33785#0" expanded="false" />
-            <element signature="e#33853#33854#0" expanded="false" />
-            <element signature="e#33913#33914#0" expanded="false" />
-            <element signature="e#33982#33983#0" expanded="false" />
-            <element signature="e#34043#34044#0" expanded="false" />
-            <element signature="e#34404#34405#0" expanded="false" />
-            <element signature="e#34453#34454#0" expanded="false" />
-            <element signature="e#35085#35086#0" expanded="false" />
-            <element signature="e#35178#35179#0" expanded="false" />
-            <element signature="e#35247#35248#0" expanded="false" />
-            <element signature="e#35307#35308#0" expanded="false" />
-            <element signature="e#35376#35377#0" expanded="false" />
-            <element signature="e#35437#35438#0" expanded="false" />
-            <element signature="e#36883#36884#0" expanded="false" />
-            <element signature="e#36938#36939#0" expanded="false" />
-            <element signature="e#37717#37718#0" expanded="false" />
-            <element signature="e#37764#37765#0" expanded="false" />
-            <element signature="e#38218#38219#0" expanded="false" />
-            <element signature="e#38314#38315#0" expanded="false" />
-            <element signature="e#38383#38384#0" expanded="false" />
-            <element signature="e#38443#38444#0" expanded="false" />
-            <element signature="e#38496#38497#0" expanded="false" />
-            <element signature="e#38555#38556#0" expanded="false" />
-            <element signature="e#38693#38694#0" expanded="false" />
-            <element signature="e#38741#38742#0" expanded="false" />
-            <element signature="e#40256#40257#0" expanded="false" />
-            <element signature="e#40344#40345#0" expanded="false" />
-            <element signature="e#41045#41046#0" expanded="false" />
-            <element signature="e#41115#41116#0" expanded="false" />
-            <element signature="e#41737#41774#0" expanded="false" />
-            <element signature="e#42431#42432#0" expanded="false" />
-            <element signature="e#42475#42476#0" expanded="false" />
-            <element signature="e#45886#45887#0" expanded="false" />
-            <element signature="e#45948#45949#0" expanded="false" />
-            <element signature="e#46065#46066#0" expanded="false" />
-            <element signature="e#46105#46106#0" expanded="false" />
-            <element signature="e#46235#46236#0" expanded="false" />
-            <element signature="e#46274#46275#0" expanded="false" />
-            <element signature="e#48371#50248#0" expanded="false" />
-            <element signature="e#50247#50248#0" expanded="false" />
-            <element signature="e#50752#50771#0" expanded="false" />
-            <element signature="e#54535#54553#0" expanded="false" />
-            <element signature="e#54804#54813#0" expanded="false" />
-            <element signature="e#54992#55001#0" expanded="false" />
-            <element signature="e#57648#57649#0" expanded="false" />
-            <element signature="e#57688#57689#0" expanded="false" />
-            <element signature="e#63177#63178#0" expanded="false" />
-            <element signature="e#63217#63218#0" expanded="false" />
-            <element signature="e#63475#63476#0" expanded="false" />
-            <element signature="e#63521#63522#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/CustomerList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClearStartManager/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClearStartManager/ManagerUiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
+        <state relative-caret-position="243">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4126#4127#0" expanded="true" />
-            <element signature="e#4183#4184#0" expanded="true" />
+            <element signature="e#2228#2229#0" expanded="true" />
+            <element signature="e#2261#2262#0" expanded="true" />
           </folding>
         </state>
       </provider>

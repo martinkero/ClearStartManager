@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.TextFieldListCell;
 
+import java.beans.EventHandler;
 import java.net.URL;
 import java.util.*;
 
@@ -27,6 +28,8 @@ public class ManagerUiController implements Initializable {
     private JFXButton toggleAgentButton;
     @FXML
     private JFXButton toggleCoachButton;
+
+    @FXML JFXNodesList testnodelist;
 
 
     private ObservableList<String> observableCustomerList = FXCollections.observableArrayList();
@@ -49,13 +52,20 @@ public class ManagerUiController implements Initializable {
         settingKeyListBox.setEditable(true);
         settingKeyListBox.setCellFactory(TextFieldListCell.forListView());
         settingKeyListBox.setOnEditCommit(this::settingKeyEdited);
+        settingKeyListBox.setOnEditStart(event -> cancelEditing(settingValueListBox));
 
         settingValueListBox.setEditable(true);
-
         settingValueListBox.setCellFactory(TextFieldListCell.forListView());
         settingValueListBox.setOnEditCommit(this::settingValueEdited);
+        settingValueListBox.setOnEditStart(event -> cancelEditing(settingKeyListBox));
 
         customerListBox.setOnMouseClicked(event -> customerListClicked());
+
+
+    }
+
+    private void cancelEditing(ListView listView) {
+        listView.edit(-1);
     }
 
     private void resetCustomerList() {
@@ -74,6 +84,7 @@ public class ManagerUiController implements Initializable {
         observableCustomerList.clear();
         for (Customer customer : customerList.getCustomers()) {
             observableCustomerList.add(customer.getName());
+
         }
 
         customerListBox.setItems(observableCustomerList);
