@@ -1,13 +1,14 @@
 package ClearStartManager;
 
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.net.HttpURLConnection;
+
 
 import com.google.gson.*;
 
@@ -16,10 +17,21 @@ class Response {
     String status;
     JsonElement data;
 }
+class PostRequest {
+    String baseUrl;
+    String queryString;
+    String installationParameters;
+
+    PostRequest(String customerName, String action) {
+        this.baseUrl = GsonManager.remoteServerUrl;
+        String clientType = "agent";
+        this.queryString = "?action=" + action + "&type=" + clientType + "&name=" + customerName;
+    }
+}
 
 
 class GsonManager {
-    static String remoteServerUrl = ""; //TODO: Set dynamically
+    static String remoteServerUrl = "http://clearstart.clearit.se/"; //TODO: Set dynamically
 
     private GsonManager() {
     }
@@ -29,7 +41,7 @@ class GsonManager {
         try {
             URL url = new URL(urlString);
             reader = new BufferedReader(new InputStreamReader(url.openStream()));
-            StringBuffer buffer = new StringBuffer();
+            StringBuilder buffer = new StringBuilder();
             int read;
             char[] chars = new char[1024];
             while ((read = reader.read(chars)) != -1) {
@@ -43,13 +55,36 @@ class GsonManager {
         }
     }
 
-    public static CustomerList getRemoteCustomers() throws Exception {
-        String json = readUrl(remoteServerUrl);
+    private static String sendPostRequest(PostRequest postRequest) throws IOException {
+        URL url = new URL(postRequest.baseUrl + postRequest.queryString);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("Content-Type","application/json");
+
+        connection.setDoOutput(true);
+        DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
+        outputStream.writeBytes(postRequest.installationParameters);
+        outputStream.flush();
+        outputStream.close();
+
+        BufferedInputStream inputStream = new BufferedInputStream(connection.getInputStream());
+        byte[] contents = new byte[1024];
+        int bytesRead;
+        StringBuilder responseBody = new StringBuilder();
+        while ((bytesRead = inputStream.read(contents)) != -1) {
+            responseBody.append(new String(contents, 0, bytesRead));
+        }
+        return responseBody.toString();
+    }
+
+    static CustomerList getRemoteCustomers() throws Exception {
+        String json = readUrl(remoteServerUrl + "?action=get&type=agent");
 
         return getCustomerListFromJson(json);
     }
 
-    public static CustomerList getCustomerListFromJson(String json) throws Exception {
+    static CustomerList getCustomerListFromJson(String json) throws Exception {
 
         Response response = new Gson().fromJson(json, Response.class);
 
@@ -60,9 +95,25 @@ class GsonManager {
         return gson.fromJson(response.data, CustomerList.class);
     }
 
+    static void modifyRemoteCustomer(Customer customer) {
+        PostRequest postRequest = new PostRequest(customer.getName(), "modify");
+
+        GsonBuilder builder = new GsonBuilder();
+        builder.registerTypeAdapter(List.class, new SettingsSerializer());
+        Gson gson = builder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
+
+        postRequest.installationParameters = gson.toJson(customer.getSettings(), List.class);
+
+        try {
+            String returnString = sendPostRequest(postRequest);
+            System.out.println(returnString);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private static class CustomerListDeserializer implements JsonDeserializer<CustomerList> {
-
         @Override
         public CustomerList deserialize(JsonElement element, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
             JsonObject customerListObject = element.getAsJsonObject();
@@ -96,8 +147,16 @@ class GsonManager {
             }
             return settings;
         }
-
     }
 
-
+    private static class SettingsSerializer implements JsonSerializer<List<Setting>> {
+        @Override
+        public JsonElement serialize(List<Setting> settings, Type type, JsonSerializationContext jsonSerializationContext) {
+            JsonObject jsonObject = new JsonObject();
+            for (Setting setting : settings) {
+                jsonObject.addProperty(setting.getKey(), setting.getValue());
+            }
+            return jsonObject;
+        }
+    }
 }

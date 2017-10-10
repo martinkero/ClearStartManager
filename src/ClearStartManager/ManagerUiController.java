@@ -45,6 +45,7 @@ public class ManagerUiController implements Initializable {
 
         resetButton.setOnMouseClicked(event -> resetButtonClicked());
         resetButton.setDisable(true);
+        saveButton.setOnMouseClicked(event -> saveButtonClicked());
         saveButton.setDisable(true);
         toggleAgentButton.setDisable(true);
         toggleCoachButton.setDisable(true);
@@ -62,6 +63,7 @@ public class ManagerUiController implements Initializable {
         customerListBox.setOnMouseClicked(event -> customerListClicked());
 
 
+
     }
 
     private void cancelEditing(ListView listView) {
@@ -71,8 +73,8 @@ public class ManagerUiController implements Initializable {
     private void resetCustomerList() {
 
         try {
-            //customerList = GsonManager.refreshCustomers();
-            customerList = GsonManagerTest.createCustomerListWithTestData();
+            customerList = GsonManager.getRemoteCustomers();
+            //customerList = GsonManagerTest.createCustomerListWithTestData();
         } catch (Exception e) {
             //TODO: Proper exception handling
             e.printStackTrace();
@@ -117,6 +119,14 @@ public class ManagerUiController implements Initializable {
         refreshGui();
     }
 
+    private void saveButtonClicked() {
+        saveButton.setDisable(true);
+        Customer customer = getSelectedCustomer();
+        GsonManager.modifyRemoteCustomer(customer);
+        resetCustomerList();
+        refreshGui();
+    }
+
 
     private void showCustomer(Customer customer) {
         settingKeyListBox.getItems().clear();
@@ -144,6 +154,7 @@ public class ManagerUiController implements Initializable {
 
     private void settingKeyEdited(ListView.EditEvent event) {
         resetButton.setDisable(false);
+        saveButton.setDisable(false);
         Customer selectedCustomer = getSelectedCustomer();
         Integer settingKeyIndex = event.getIndex();
         String newValue = event.getNewValue().toString();
@@ -154,6 +165,7 @@ public class ManagerUiController implements Initializable {
 
     private void settingValueEdited(ListView.EditEvent event) {
         resetButton.setDisable(false);
+        saveButton.setDisable(false);
         Customer selectedCustomer = getSelectedCustomer();
         Integer settingValueIndex = event.getIndex();
         String newValue = event.getNewValue().toString();
