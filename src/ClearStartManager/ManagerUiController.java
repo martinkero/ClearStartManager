@@ -98,12 +98,12 @@ public class ManagerUiController implements Initializable {
 
         customerListBox.setItems(observableCustomerList);
 
-
         showCustomer(selectedCustomer);
 
     }
 
     private void customerListClicked() {
+        resetCustomerList();
         Customer clickedCustomer;
         try {
             clickedCustomer = getSelectedCustomer();
