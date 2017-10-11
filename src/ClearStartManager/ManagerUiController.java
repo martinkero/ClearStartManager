@@ -83,22 +83,23 @@ public class ManagerUiController implements Initializable {
     }
 
     private void refreshGui() {
+        Customer selectedCustomer;
+        try {
+            selectedCustomer = getSelectedCustomer();
+        } catch (IndexOutOfBoundsException e) {
+            selectedCustomer = getTopmostCustomer();
+            customerListBox.getSelectionModel().selectFirst();
+        }
+
         observableCustomerList.clear();
         for (Customer customer : customerList.getCustomers()) {
             observableCustomerList.add(customer.getName());
-
         }
 
         customerListBox.setItems(observableCustomerList);
 
-        try {
-            Customer selectedCustomer = getSelectedCustomer();
-            showCustomer(selectedCustomer);
-        } catch (IndexOutOfBoundsException e) {
-            Customer selectedCustomer = getTopmostCustomer();
-            customerListBox.getSelectionModel().selectFirst();
-            showCustomer(selectedCustomer);
-        }
+
+        showCustomer(selectedCustomer);
 
     }
 
