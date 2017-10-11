@@ -29,8 +29,6 @@ public class ManagerUiController implements Initializable {
     @FXML
     private JFXButton toggleCoachButton;
 
-    @FXML JFXNodesList testnodelist;
-
 
     private ObservableList<String> observableCustomerList = FXCollections.observableArrayList();
     private ObservableList<String> observableSettingKeyList = FXCollections.observableArrayList();
@@ -116,11 +114,13 @@ public class ManagerUiController implements Initializable {
 
     private void resetButtonClicked() {
         resetButton.setDisable(true);
+        saveButton.setDisable(true);
         resetCustomerList();
         refreshGui();
     }
 
     private void saveButtonClicked() {
+        resetButton.setDisable(true);
         saveButton.setDisable(true);
         Customer customer = getSelectedCustomer();
         GsonManager.modifyRemoteCustomer(customer);
@@ -151,7 +151,6 @@ public class ManagerUiController implements Initializable {
     private Customer getTopmostCustomer() {
         return customerList.getCustomerByIndex(0);
     }
-
 
     private void settingKeyEdited(ListView.EditEvent event) {
         resetButton.setDisable(false);

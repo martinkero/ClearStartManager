@@ -11,23 +11,106 @@ import java.net.HttpURLConnection;
 
 
 import com.google.gson.*;
+import com.sun.org.apache.xpath.internal.operations.Mod;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 class Response {
     String code;
     String status;
     JsonElement data;
 }
-class PostRequest {
-    String baseUrl;
+class Request {
+    private String baseUrl = GsonManager.remoteServerUrl;
     String queryString;
-    String installationParameters;
+    private String clientType = "agent";
+    private String action;
 
-    PostRequest(String customerName, String action) {
-        this.baseUrl = GsonManager.remoteServerUrl;
-        String clientType = "agent";
-        this.queryString = "?action=" + action + "&type=" + clientType + "&name=" + customerName;
+    Request(String action) {
+        this.action = action;
+        this.queryString = "?type=" + this.clientType + "&action=" + this.action;
+    }
+
+    String sendGetRequest() throws IOException {
+        BufferedInputStream inputStream = null;
+        try {
+            URL url = new URL(this.baseUrl + this.queryString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            inputStream = new BufferedInputStream(connection.getInputStream());
+            byte[] contents = new byte[1024];
+            int bytesRead;
+            StringBuilder responseBody = new StringBuilder();
+            while ((bytesRead = inputStream.read(contents)) != -1) {
+                responseBody.append(new String(contents, 0, bytesRead));
+            }
+            return responseBody.toString();
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
+        }
+    }
+
+    String sendPostRequest(String dataBody) throws IOException {
+        BufferedInputStream inputStream = null;
+        try {
+            URL url = new URL(this.baseUrl + this.queryString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type","application/json");
+
+            connection.setDoOutput(true);
+            DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
+            outputStream.writeBytes(dataBody);
+            outputStream.flush();
+            outputStream.close();
+
+            inputStream = new BufferedInputStream(connection.getInputStream());
+            byte[] contents = new byte[1024];
+            int bytesRead;
+            StringBuilder responseBody = new StringBuilder();
+            while ((bytesRead = inputStream.read(contents)) != -1) {
+                responseBody.append(new String(contents, 0, bytesRead));
+            }
+            return responseBody.toString();
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+            }
+        }
     }
 }
+class GetRequest extends Request {
+    GetRequest() {
+        super("get");
+    }
+    GetRequest(String customerName) {
+        super("get");
+        this.queryString += "&name=" + customerName;
+    }
+}
+class ModifyRequest extends Request {
+    private String installationParameters;
+    ModifyRequest(String customerName, String installationParameters) {
+        super("modify");
+        this.installationParameters = installationParameters;
+        this.queryString += "&name=" + customerName;
+    }
+    String sendModifyRequest() throws IOException {
+        return sendPostRequest(this.installationParameters);
+    }
+}
+class DeleteRequest extends Request {
+    DeleteRequest(String customerName) {
+        super("delete");
+        this.queryString += "&name=" + customerName;
+    }
+    String sendDeleteRequest() throws IOException {
+        return sendGetRequest();
+    }
+}
+
 
 
 class GsonManager {
@@ -36,50 +119,8 @@ class GsonManager {
     private GsonManager() {
     }
 
-    private static String readUrl(String urlString) throws Exception {
-        BufferedReader reader = null;
-        try {
-            URL url = new URL(urlString);
-            reader = new BufferedReader(new InputStreamReader(url.openStream()));
-            StringBuilder buffer = new StringBuilder();
-            int read;
-            char[] chars = new char[1024];
-            while ((read = reader.read(chars)) != -1) {
-                buffer.append(chars, 0, read);
-            }
-            return buffer.toString();
-        } finally {
-            if (reader != null) {
-                reader.close();
-            }
-        }
-    }
-
-    private static String sendPostRequest(PostRequest postRequest) throws IOException {
-        URL url = new URL(postRequest.baseUrl + postRequest.queryString);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Content-Type","application/json");
-
-        connection.setDoOutput(true);
-        DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
-        outputStream.writeBytes(postRequest.installationParameters);
-        outputStream.flush();
-        outputStream.close();
-
-        BufferedInputStream inputStream = new BufferedInputStream(connection.getInputStream());
-        byte[] contents = new byte[1024];
-        int bytesRead;
-        StringBuilder responseBody = new StringBuilder();
-        while ((bytesRead = inputStream.read(contents)) != -1) {
-            responseBody.append(new String(contents, 0, bytesRead));
-        }
-        return responseBody.toString();
-    }
-
     static CustomerList getRemoteCustomers() throws Exception {
-        String json = readUrl(remoteServerUrl + "?action=get&type=agent");
+        String json = new GetRequest().sendGetRequest();
 
         return getCustomerListFromJson(json);
     }
@@ -96,20 +137,32 @@ class GsonManager {
     }
 
     static void modifyRemoteCustomer(Customer customer) {
-        PostRequest postRequest = new PostRequest(customer.getName(), "modify");
+        String settingsJson = getSettingsJsonFromCustomer(customer);
+        ModifyRequest modifyRequest = new ModifyRequest(customer.getName(), settingsJson);
+        try {
+            String returnString = modifyRequest.sendModifyRequest();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    static void deleteRemoteCustomer(Customer customer) {
+        String settingsJson = getSettingsJsonFromCustomer(customer);
+        DeleteRequest deleteRequest = new DeleteRequest(customer.getName());
+        try {
+            String returnString = deleteRequest.sendDeleteRequest();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private static String getSettingsJsonFromCustomer(Customer customer) {
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(List.class, new SettingsSerializer());
         Gson gson = builder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
 
-        postRequest.installationParameters = gson.toJson(customer.getSettings(), List.class);
+        return gson.toJson(customer.getSettings(), List.class);
 
-        try {
-            String returnString = sendPostRequest(postRequest);
-            System.out.println(returnString);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 
