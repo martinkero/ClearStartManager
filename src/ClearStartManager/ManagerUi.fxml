@@ -22,9 +22,9 @@
             <StackPane>
                <children>
                     <JFXListView fx:id="customerListBox" fixedCellSize="50.0" focusTraversable="false" prefWidth="200.0" />
-                  <JFXButton id="addCustomerButton" alignment="CENTER" buttonType="RAISED" opacity="0.8" styleClass="teststyle" text="+" StackPane.alignment="BOTTOM_RIGHT">
+                  <JFXButton id="addCustomerButton" fx:id="addCustomerButton" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="0.0" opacity="0.8" text="+" textAlignment="CENTER" StackPane.alignment="BOTTOM_RIGHT">
                      <StackPane.margin>
-                        <Insets bottom="5.0" right="5.0" />
+                        <Insets bottom="5.0" right="13.0" />
                      </StackPane.margin>
                   </JFXButton>
                </children>

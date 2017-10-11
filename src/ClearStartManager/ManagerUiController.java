@@ -128,6 +128,12 @@ public class ManagerUiController implements Initializable {
         refreshGui();
     }
 
+    private void deleteButtonClicked() {
+        Customer customer = getSelectedCustomer();
+        //new DeleteRequest(customer.getName());
+        System.out.println(customer.getName());
+    }
+
 
     private void showCustomer(Customer customer) {
         settingKeyListBox.getItems().clear();
