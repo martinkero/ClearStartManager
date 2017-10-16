@@ -28,11 +28,15 @@
     -jfx-rippler-fill: #82A8D8;
 }
 
-#addCustomerButton {
-    -fx-background-radius: 100%;
-    -fx-text-fill: white;
-    -fx-background-color: #99BEEE;
-    -fx-font-size: 17px;
+.customerButton {
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 0%;
+    -fx-font-size: 10px;
+}
+
+#customerButtonBorder {
+    -fx-stroke: lightgray;
+
 }
 
 .scroll-bar {

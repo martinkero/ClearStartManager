@@ -1,7 +1,6 @@
 package ClearStartManager;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 class CustomerList {
     private List<Customer> customers;
@@ -24,6 +23,11 @@ class CustomerList {
             return customer;
         }
         throw new IndexOutOfBoundsException();
+    }
+
+    void addCustomer(String name, List<Setting> settings) {
+        Customer customer = new Customer(name, settings);
+        customers.add(customer);
     }
 
 }

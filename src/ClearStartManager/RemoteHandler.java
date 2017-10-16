@@ -11,8 +11,18 @@ import java.net.URL;
 class RemoteHandler {
     static String remoteServerUrl = "http://clearstart.clearit.se/"; //TODO: Set dynamically
 
+    static void createRemoteCustomer(Customer customer) {
+        String settingsJson = GsonHandler.getSettingsJsonStringFromCustomer(customer);
+        CreateRequest createRequest = new CreateRequest(customer.getName(), settingsJson);
+        try {
+            String returnString = createRequest.sendCreateRequest();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     static void modifyRemoteCustomer(Customer customer) {
-        String settingsJson = GsonHandler.getSettingsJsonFromCustomer(customer);
+        String settingsJson = GsonHandler.getSettingsJsonStringFromCustomer(customer);
         ModifyRequest modifyRequest = new ModifyRequest(customer.getName(), settingsJson);
         try {
             String returnString = modifyRequest.sendModifyRequest();
@@ -22,7 +32,7 @@ class RemoteHandler {
     }
 
     static void deleteRemoteCustomer(Customer customer) {
-        String settingsJson = GsonHandler.getSettingsJsonFromCustomer(customer);
+        String settingsJson = GsonHandler.getSettingsJsonStringFromCustomer(customer);
         DeleteRequest deleteRequest = new DeleteRequest(customer.getName());
         try {
             String returnString = deleteRequest.sendDeleteRequest();
@@ -115,6 +125,20 @@ class GetRequest extends Request {
     GetRequest(String customerName) {
         super("get");
         this.queryString += "&name=" + customerName;
+    }
+}
+
+class CreateRequest extends Request {
+    private String installationParameters;
+
+    CreateRequest(String customerName, String installationParameters) {
+        super("create");
+        this.installationParameters = installationParameters;
+        this.queryString += "&name=" + customerName;
+    }
+
+    String sendCreateRequest() throws IOException {
+        return sendPostRequest(this.installationParameters);
     }
 }
 

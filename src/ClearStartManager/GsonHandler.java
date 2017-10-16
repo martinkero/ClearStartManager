@@ -28,7 +28,7 @@ class GsonHandler {
     }
 
 
-    static String getSettingsJsonFromCustomer(Customer customer) {
+    static String getSettingsJsonStringFromCustomer(Customer customer) {
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(List.class, new SettingsSerializer());
         Gson gson = builder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();

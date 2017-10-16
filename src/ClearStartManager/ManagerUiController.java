@@ -10,6 +10,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.cell.TextFieldListCell;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ManagerUiController implements Initializable {
@@ -28,6 +30,10 @@ public class ManagerUiController implements Initializable {
     private JFXButton toggleAgentButton;
     @FXML
     private JFXButton toggleCoachButton;
+    @FXML
+    private JFXButton createCustomerButton;
+    @FXML
+    private JFXButton deleteCustomerButton;
 
 
     private ObservableList<String> observableCustomerList = FXCollections.observableArrayList();
@@ -43,10 +49,15 @@ public class ManagerUiController implements Initializable {
 
         resetButton.setOnMouseClicked(event -> resetButtonClicked());
         resetButton.setDisable(true);
+
         saveButton.setOnMouseClicked(event -> saveButtonClicked());
         saveButton.setDisable(true);
+
         toggleAgentButton.setDisable(true);
         toggleCoachButton.setDisable(true);
+
+        createCustomerButton.setOnMouseClicked(event -> createCustomerButtonClicked());
+        deleteCustomerButton.setOnMouseClicked(event -> deleteButtonClicked());
 
         settingKeyListBox.setEditable(true);
         settingKeyListBox.setCellFactory(TextFieldListCell.forListView());
@@ -59,7 +70,6 @@ public class ManagerUiController implements Initializable {
         settingValueListBox.setOnEditStart(event -> cancelEditing(settingKeyListBox));
 
         customerListBox.setOnMouseClicked(event -> customerListClicked());
-
 
 
     }
@@ -128,12 +138,20 @@ public class ManagerUiController implements Initializable {
         refreshGui();
     }
 
-    private void deleteButtonClicked() {
-        Customer customer = getSelectedCustomer();
-        //new DeleteRequest(customer.getName());
-        System.out.println(customer.getName());
+    private void createCustomerButtonClicked() {
+        List<Setting> emptySettings = new ArrayList<Setting>();
+        Customer customer = new Customer("newcustomer", emptySettings);
+        RemoteHandler.createRemoteCustomer(customer);
+        resetCustomerList();
+        refreshGui();
     }
 
+    private void deleteButtonClicked() {
+        Customer customer = getSelectedCustomer();
+        RemoteHandler.deleteRemoteCustomer(customer);
+        resetCustomerList();
+        refreshGui();
+    }
 
     private void showCustomer(Customer customer) {
         settingKeyListBox.getItems().clear();
