@@ -1,6 +1,7 @@
 package ClearStartManager;
 
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,9 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.TextFieldListCell;
 
-import java.beans.EventHandler;
 import java.net.URL;
-import java.util.*;
+import java.util.ResourceBundle;
 
 public class ManagerUiController implements Initializable {
 
@@ -71,8 +71,8 @@ public class ManagerUiController implements Initializable {
     private void resetCustomerList() {
 
         try {
-            customerList = GsonManager.getRemoteCustomers();
-            //customerList = GsonManagerTest.createCustomerListWithTestData();
+            customerList = RemoteHandler.getRemoteCustomers();
+            //customerList = GsonHandlerTest.createCustomerListWithTestData();
         } catch (Exception e) {
             //TODO: Proper exception handling
             e.printStackTrace();
@@ -123,7 +123,7 @@ public class ManagerUiController implements Initializable {
         resetButton.setDisable(true);
         saveButton.setDisable(true);
         Customer customer = getSelectedCustomer();
-        GsonManager.modifyRemoteCustomer(customer);
+        RemoteHandler.modifyRemoteCustomer(customer);
         resetCustomerList();
         refreshGui();
     }
