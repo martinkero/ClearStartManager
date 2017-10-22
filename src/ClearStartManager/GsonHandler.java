@@ -3,6 +3,10 @@ package ClearStartManager;
 
 import com.google.gson.*;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,26 +18,51 @@ class GsonHandler {
     private GsonHandler() {
     }
 
+    static CustomerList getCustomerListFromJsonFile(String file) throws FileNotFoundException {
+        FileReader fileReader = new FileReader(file);
+        JsonParser parser = new JsonParser();
+        JsonObject jsonObject = (JsonObject) parser.parse(fileReader);
+        return getCustomerListFromJson((JsonObject) jsonObject.get(CustomerHandler.clientType));
+    }
 
+    static void writeCustomerListToJsonFile(CustomerList customerList, String file) throws IOException {
+        FileWriter fileWriter = new FileWriter(file);
+        JsonObject jsonObject = new JsonObject();
 
-    static CustomerList getCustomerListFromJson(String json) throws Exception {
+        GsonBuilder builder = new GsonBuilder();
+        builder.registerTypeAdapter(List.class, new CustomerListSerializer());
+        Gson gson = builder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
+        JsonObject customerListJson = (JsonObject) gson.toJsonTree(customerList.getCustomers(), List.class);
 
-        Response response = new Gson().fromJson(json, Response.class);
+        jsonObject.add(CustomerHandler.clientType, customerListJson);
+
+        Gson gsonWriter = new GsonBuilder().setPrettyPrinting().create();
+        gsonWriter.toJson(jsonObject, fileWriter);
+        fileWriter.close();
+
+    }
+
+    static CustomerList getCustomerListFromResponseString(String responseString) {
+        Response response = new Gson().fromJson(responseString, Response.class);
+        return getCustomerListFromJson(response.data);
+    }
+
+    private static CustomerList getCustomerListFromJson(JsonObject json) {
 
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(CustomerList.class, new CustomerListDeserializer());
         Gson gson = builder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
 
-        return gson.fromJson(response.data, CustomerList.class);
+        return gson.fromJson(json, CustomerList.class);
     }
 
 
-    static String getSettingsJsonStringFromCustomer(Customer customer) {
+    static JsonObject getSettingsJsonStringFromCustomer(Customer customer) {
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(List.class, new SettingsSerializer());
         Gson gson = builder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
 
-        return gson.toJson(customer.getSettings(), List.class);
+        return (JsonObject) gson.toJsonTree(customer.getSettings(), List.class);
 
     }
 
@@ -79,7 +108,21 @@ class GsonHandler {
         public JsonElement serialize(List<Setting> settings, Type type, JsonSerializationContext jsonSerializationContext) {
             JsonObject jsonObject = new JsonObject();
             for (Setting setting : settings) {
-                jsonObject.addProperty(setting.getKey(), setting.getValue());
+                if (!"".equals(setting.getKey())) {
+                    jsonObject.addProperty(setting.getKey(), setting.getValue());
+                }
+            }
+            return jsonObject;
+        }
+    }
+
+    private static class CustomerListSerializer implements JsonSerializer<List<Customer>> {
+        @Override
+        public JsonElement serialize(List<Customer> customers, Type type, JsonSerializationContext jsonSerializationContext) {
+            JsonObject jsonObject = new JsonObject();
+            for (Customer customer : customers) {
+                JsonObject settingsJsonString = getSettingsJsonStringFromCustomer(customer);
+                jsonObject.add(customer.getName(), settingsJsonString);
             }
             return jsonObject;
         }

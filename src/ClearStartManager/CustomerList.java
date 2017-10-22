@@ -25,9 +25,24 @@ class CustomerList {
         throw new IndexOutOfBoundsException();
     }
 
-    void addCustomer(String name, List<Setting> settings) {
-        Customer customer = new Customer(name, settings);
+    void addCustomer(Customer customer) {
         customers.add(customer);
+    }
+
+    void deleteCustomer(Customer customer) {
+        customers.remove(customer);
+    }
+
+    void sort() {
+        customers.sort((o1, o2) -> {
+            if ("default".equalsIgnoreCase(o1.getName())) {
+                return -1;
+            }
+            if ("default".equalsIgnoreCase(o2.getName())) {
+                return 1;
+            }
+            return o1.getName().compareToIgnoreCase(o2.getName());
+        });
     }
 
 }

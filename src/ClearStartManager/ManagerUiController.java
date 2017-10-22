@@ -7,11 +7,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.TextFieldListCell;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ManagerUiController implements Initializable {
@@ -31,6 +32,10 @@ public class ManagerUiController implements Initializable {
     @FXML
     private JFXButton toggleCoachButton;
     @FXML
+    private JFXButton toggleRemoteButton;
+    @FXML
+    private JFXButton toggleLocalButton;
+    @FXML
     private JFXButton createCustomerButton;
     @FXML
     private JFXButton deleteCustomerButton;
@@ -39,24 +44,28 @@ public class ManagerUiController implements Initializable {
     private ObservableList<String> observableCustomerList = FXCollections.observableArrayList();
     private ObservableList<String> observableSettingKeyList = FXCollections.observableArrayList();
     private ObservableList<String> observableSettingValueList = FXCollections.observableArrayList();
-    private CustomerList customerList;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        resetCustomerList();
-        refreshGui();
-
         resetButton.setOnMouseClicked(event -> resetButtonClicked());
         resetButton.setDisable(true);
 
         saveButton.setOnMouseClicked(event -> saveButtonClicked());
         saveButton.setDisable(true);
 
-        toggleAgentButton.setDisable(true);
-        toggleCoachButton.setDisable(true);
+        toggleAgentButton.getStyleClass().add("toggled");
+        toggleAgentButton.setOnMouseClicked(event -> toggleAgentButtonClicked());
+
+        toggleCoachButton.setOnMouseClicked(event -> toggleCoachButtonClicked());
+
+        toggleRemoteButton.getStyleClass().add("toggled");
+        toggleRemoteButton.setOnMouseClicked(event -> toggleRemoteButtonClicked());
+
+        toggleLocalButton.setOnMouseClicked(event -> toggleLocalButtonClicked());
 
         createCustomerButton.setOnMouseClicked(event -> createCustomerButtonClicked());
+
         deleteCustomerButton.setOnMouseClicked(event -> deleteButtonClicked());
 
         settingKeyListBox.setEditable(true);
@@ -71,24 +80,15 @@ public class ManagerUiController implements Initializable {
 
         customerListBox.setOnMouseClicked(event -> customerListClicked());
 
-
+        CustomerHandler.resetCustomerList();
+        refreshGui();
     }
+
 
     private void cancelEditing(ListView listView) {
         listView.edit(-1);
     }
 
-    private void resetCustomerList() {
-
-        try {
-            customerList = RemoteHandler.getRemoteCustomers();
-            //customerList = GsonHandlerTest.createCustomerListWithTestData();
-        } catch (Exception e) {
-            //TODO: Proper exception handling
-            e.printStackTrace();
-            System.exit(0);
-        }
-    }
 
     private void refreshGui() {
         Customer selectedCustomer;
@@ -100,7 +100,7 @@ public class ManagerUiController implements Initializable {
         }
 
         observableCustomerList.clear();
-        for (Customer customer : customerList.getCustomers()) {
+        for (Customer customer : CustomerHandler.customerList.getCustomers()) {
             observableCustomerList.add(customer.getName());
         }
 
@@ -111,7 +111,7 @@ public class ManagerUiController implements Initializable {
     }
 
     private void customerListClicked() {
-        resetCustomerList();
+        CustomerHandler.resetCustomerList();
         Customer clickedCustomer;
         try {
             clickedCustomer = getSelectedCustomer();
@@ -122,10 +122,42 @@ public class ManagerUiController implements Initializable {
         showCustomer(clickedCustomer);
     }
 
+    private void toggleAgentButtonClicked() {
+        toggleAgentButton.getStyleClass().add("toggled");
+        toggleCoachButton.getStyleClass().removeAll("toggled");
+        CustomerHandler.clientType = "agent";
+        CustomerHandler.resetCustomerList();
+        refreshGui();
+    }
+
+    private void toggleCoachButtonClicked() {
+        toggleAgentButton.getStyleClass().removeAll("toggled");
+        toggleCoachButton.getStyleClass().add("toggled");
+        CustomerHandler.clientType = "coach";
+        CustomerHandler.resetCustomerList();
+        refreshGui();
+    }
+
+    private void toggleRemoteButtonClicked() {
+        toggleRemoteButton.getStyleClass().add("toggled");
+        toggleLocalButton.getStyleClass().removeAll("toggled");
+        CustomerHandler.customerType = "remote";
+        CustomerHandler.resetCustomerList();
+        refreshGui();
+    }
+
+    private void toggleLocalButtonClicked() {
+        toggleRemoteButton.getStyleClass().removeAll("toggled");
+        toggleLocalButton.getStyleClass().add("toggled");
+        CustomerHandler.customerType = "local";
+        CustomerHandler.resetCustomerList();
+        refreshGui();
+    }
+
     private void resetButtonClicked() {
         resetButton.setDisable(true);
         saveButton.setDisable(true);
-        resetCustomerList();
+        CustomerHandler.resetCustomerList();
         refreshGui();
     }
 
@@ -133,47 +165,79 @@ public class ManagerUiController implements Initializable {
         resetButton.setDisable(true);
         saveButton.setDisable(true);
         Customer customer = getSelectedCustomer();
-        RemoteHandler.modifyRemoteCustomer(customer);
-        resetCustomerList();
+        try {
+            CustomerHandler.modifyCustomer(customer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        CustomerHandler.resetCustomerList();
         refreshGui();
     }
 
     private void createCustomerButtonClicked() {
-        List<Setting> emptySettings = new ArrayList<Setting>();
-        Customer customer = new Customer("newcustomer", emptySettings);
-        RemoteHandler.createRemoteCustomer(customer);
-        resetCustomerList();
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("New Customer");
+        dialog.setContentText("Name: ");
+        dialog.setHeaderText("");
+        dialog.setGraphic(null);
+        Optional<String> result = dialog.showAndWait();
+        if (!result.isPresent() || "".equals(result.get())) {
+            return;
+        }
+        String customerName = result.get();
+
+        try {
+            CustomerHandler.createCustomer(customerName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        CustomerHandler.resetCustomerList();
         refreshGui();
+
+        customerListBox.getSelectionModel().select(customerName);
+        customerListBox.scrollTo(customerName);
+
+        showCustomer(getSelectedCustomer());
     }
+
 
     private void deleteButtonClicked() {
         Customer customer = getSelectedCustomer();
-        RemoteHandler.deleteRemoteCustomer(customer);
-        resetCustomerList();
+        try {
+            CustomerHandler.deleteCustomer(customer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        CustomerHandler.resetCustomerList();
         refreshGui();
     }
 
     private void showCustomer(Customer customer) {
         settingKeyListBox.getItems().clear();
         settingValueListBox.getItems().clear();
+
+        customer.addEmptySettingIfNone();
+
         for (Setting setting : customer.getSettings()) {
             observableSettingKeyList.add(setting.getKey());
             observableSettingValueList.add(setting.getValue());
         }
+
         settingKeyListBox.setItems(observableSettingKeyList);
         settingValueListBox.setItems(observableSettingValueList);
 
+        settingKeyListBox.edit(settingKeyListBox.getItems().size() - 1);
     }
 
     private Customer getSelectedCustomer() throws IndexOutOfBoundsException {
         int selectedIndex = customerListBox.getSelectionModel().getSelectedIndex();
         if (selectedIndex == -1) throw new IndexOutOfBoundsException();
 
-        return customerList.getCustomerByIndex(selectedIndex);
+        return CustomerHandler.customerList.getCustomerByIndex(selectedIndex);
     }
 
     private Customer getTopmostCustomer() {
-        return customerList.getCustomerByIndex(0);
+        return CustomerHandler.customerList.getCustomerByIndex(0);
     }
 
     private void settingKeyEdited(ListView.EditEvent event) {

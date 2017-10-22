@@ -1,6 +1,6 @@
 package ClearStartManager;
 
-import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import java.io.BufferedInputStream;
 import java.io.DataOutputStream;
@@ -11,53 +11,18 @@ import java.net.URL;
 class RemoteHandler {
     static String remoteServerUrl = "http://clearstart.clearit.se/"; //TODO: Set dynamically
 
-    static void createRemoteCustomer(Customer customer) {
-        String settingsJson = GsonHandler.getSettingsJsonStringFromCustomer(customer);
-        CreateRequest createRequest = new CreateRequest(customer.getName(), settingsJson);
-        try {
-            String returnString = createRequest.sendCreateRequest();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    static void modifyRemoteCustomer(Customer customer) {
-        String settingsJson = GsonHandler.getSettingsJsonStringFromCustomer(customer);
-        ModifyRequest modifyRequest = new ModifyRequest(customer.getName(), settingsJson);
-        try {
-            String returnString = modifyRequest.sendModifyRequest();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    static void deleteRemoteCustomer(Customer customer) {
-        String settingsJson = GsonHandler.getSettingsJsonStringFromCustomer(customer);
-        DeleteRequest deleteRequest = new DeleteRequest(customer.getName());
-        try {
-            String returnString = deleteRequest.sendDeleteRequest();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    static CustomerList getRemoteCustomers() throws Exception {
-        String json = new GetRequest().sendGetRequest();
-
-        return GsonHandler.getCustomerListFromJson(json);
-    }
 }
 
 class Response {
     String code;
     String status;
-    JsonElement data;
+    JsonObject data;
 }
 
 class Request {
     String queryString;
     private String baseUrl = RemoteHandler.remoteServerUrl;
-    private String clientType = "agent";
+    private String clientType = CustomerHandler.clientType;
     private String action;
 
     Request(String action) {

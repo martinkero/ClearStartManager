@@ -1,7 +1,7 @@
 .root {
 
     -fx-font-family: "Helvetica";
-    -fx-font-size: 13pt;
+    -fx-font-size: 12pt;
 
     -fx-accent: #99BEEE;
 
@@ -41,4 +41,9 @@
 
 .scroll-bar {
     -fx-font-size:8px;
+}
+
+.toggled {
+    -fx-background-color: #99BEEE;
+    -fx-background-radius: 0%;
 }

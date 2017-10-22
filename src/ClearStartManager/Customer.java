@@ -26,8 +26,22 @@ class Customer {
         this.settings = settings;
     }
 
+    void addEmptySettingIfNone() {
+        for (Setting setting : this.getSettings()) {
+            if ("".equals(setting.getKey())) {
+                return;
+            }
+        }
+        Setting emptySetting = new Setting("", "");
+        this.addSetting(emptySetting);
+    }
+
+    private void addSetting(Setting setting) {
+        this.settings.add(setting);
+    }
+
     Setting getSettingByIndex(Integer index) throws NoSuchElementException {
-        Setting setting = settings.get(index);
+        Setting setting = this.settings.get(index);
         if (setting != null) {
             return setting;
         }
@@ -43,4 +57,5 @@ class Customer {
         Setting setting = getSettingByIndex(index);
         setting.setValue(value);
     }
+
 }

@@ -41,7 +41,7 @@ public class GsonHandlerTest {
 
 
         CustomerList customerList = createCustomerListWithTestData();
-        CustomerList customerListFromJson = GsonHandler.getCustomerListFromJson(json);
+        CustomerList customerListFromJson = GsonHandler.getCustomerListFromResponseString(json);
 
         String cust1User = customerList.getCustomerByIndex(0).getSettingByIndex(1).getValue();
         String cust1UserFromJson = customerListFromJson.getCustomerByIndex(0).getSettingByIndex(1).getValue();
