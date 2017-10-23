@@ -8,8 +8,8 @@ class CustomerHandler {
     static String clientType = "agent";
     static String customerType = "remote";
     static CustomerList customerList;
-    private static String localAgentConfigFile = "C:\\Users\\marti\\Desktop\\clearStartAgentCustomers.json";
-    private static String localCoachConfigFile = "C:\\Users\\marti\\Desktop\\clearStartCoachCustomers.json";
+    private static String localAgentConfigFile = "/Users/mark/Dropbox/ClearIt/CustomClearMac/clearStart/agent/clearStartCustomers.json";
+    private static String localCoachConfigFile = "/Users/mark/Dropbox/ClearIt/CustomClearMac/clearStart/coach/clearStartCustomers.json";
 
     static void resetCustomerList() {
         try {

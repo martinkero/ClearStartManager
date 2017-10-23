@@ -96,18 +96,20 @@ public class ManagerUiController implements Initializable {
             selectedCustomer = getSelectedCustomer();
         } catch (IndexOutOfBoundsException e) {
             selectedCustomer = getTopmostCustomer();
-            customerListBox.getSelectionModel().selectFirst();
         }
 
+        rebuildObservableCustomerList();
+
+        showCustomer(selectedCustomer);
+    }
+
+    private void rebuildObservableCustomerList() {
         observableCustomerList.clear();
         for (Customer customer : CustomerHandler.customerList.getCustomers()) {
             observableCustomerList.add(customer.getName());
         }
 
         customerListBox.setItems(observableCustomerList);
-
-        showCustomer(selectedCustomer);
-
     }
 
     private void customerListClicked() {
@@ -128,6 +130,7 @@ public class ManagerUiController implements Initializable {
         CustomerHandler.clientType = "agent";
         CustomerHandler.resetCustomerList();
         refreshGui();
+        customerListBox.getSelectionModel().selectFirst();
     }
 
     private void toggleCoachButtonClicked() {
@@ -136,6 +139,7 @@ public class ManagerUiController implements Initializable {
         CustomerHandler.clientType = "coach";
         CustomerHandler.resetCustomerList();
         refreshGui();
+        customerListBox.getSelectionModel().selectFirst();
     }
 
     private void toggleRemoteButtonClicked() {
@@ -144,6 +148,7 @@ public class ManagerUiController implements Initializable {
         CustomerHandler.customerType = "remote";
         CustomerHandler.resetCustomerList();
         refreshGui();
+        customerListBox.getSelectionModel().selectFirst();
     }
 
     private void toggleLocalButtonClicked() {
@@ -152,6 +157,7 @@ public class ManagerUiController implements Initializable {
         CustomerHandler.customerType = "local";
         CustomerHandler.resetCustomerList();
         refreshGui();
+        customerListBox.getSelectionModel().selectFirst();
     }
 
     private void resetButtonClicked() {
@@ -213,6 +219,8 @@ public class ManagerUiController implements Initializable {
     }
 
     private void showCustomer(Customer customer) {
+        customerListBox.getSelectionModel().select(CustomerHandler.customerList.getCustomers().indexOf(customer));
+
         settingKeyListBox.getItems().clear();
         settingValueListBox.getItems().clear();
 
