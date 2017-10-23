@@ -125,36 +125,28 @@ public class ManagerUiController implements Initializable {
     }
 
     private void toggleAgentButtonClicked() {
-        toggleAgentButton.getStyleClass().add("toggled");
-        toggleCoachButton.getStyleClass().removeAll("toggled");
         CustomerHandler.clientType = "agent";
-        CustomerHandler.resetCustomerList();
-        refreshGui();
-        customerListBox.getSelectionModel().selectFirst();
+        toggleButton(toggleAgentButton, toggleCoachButton);
     }
 
     private void toggleCoachButtonClicked() {
-        toggleAgentButton.getStyleClass().removeAll("toggled");
-        toggleCoachButton.getStyleClass().add("toggled");
         CustomerHandler.clientType = "coach";
-        CustomerHandler.resetCustomerList();
-        refreshGui();
-        customerListBox.getSelectionModel().selectFirst();
+        toggleButton(toggleCoachButton, toggleAgentButton);
     }
 
     private void toggleRemoteButtonClicked() {
-        toggleRemoteButton.getStyleClass().add("toggled");
-        toggleLocalButton.getStyleClass().removeAll("toggled");
         CustomerHandler.customerType = "remote";
-        CustomerHandler.resetCustomerList();
-        refreshGui();
-        customerListBox.getSelectionModel().selectFirst();
+        toggleButton(toggleRemoteButton, toggleLocalButton);
     }
 
     private void toggleLocalButtonClicked() {
-        toggleRemoteButton.getStyleClass().removeAll("toggled");
-        toggleLocalButton.getStyleClass().add("toggled");
         CustomerHandler.customerType = "local";
+        toggleButton(toggleLocalButton, toggleRemoteButton);
+    }
+
+    private void toggleButton(JFXButton toggledButton, JFXButton unToggledButton) {
+        toggledButton.getStyleClass().add("toggled");
+        unToggledButton.getStyleClass().removeAll("toggled");
         CustomerHandler.resetCustomerList();
         refreshGui();
         customerListBox.getSelectionModel().selectFirst();
